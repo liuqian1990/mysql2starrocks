@@ -1,0 +1,21 @@
+source:
+  type: mysql
+  name: MySQL Source
+  hostname: 127.0.0.1
+  port: 3306
+  username: admin
+  password: pass
+  tables: adb.*, bdb.user_table_[0-9]+, [app|web].order_.*
+  server-id: 5401-5404
+  scan.startup.mode: specific-offset
+  scan.startup.specific-offset.file: ""
+sink:
+  type: starrocks
+  name: StarRocks Sink
+  jdbc-url: jdbc:mysql://127.0.0.1:9030
+  load-url: 127.0.0.1:8030
+  username: root
+  password: pass
+pipeline:
+  name: MySQL to StarRocks Pipeline
+  parallelism: 2

@@ -1,0 +1,57 @@
+{
+    "job": {
+        "setting": {
+            "speed": {
+                "channel": 1
+            },
+            "errorLimit": {
+                "record": 0,
+                "percentage": 0
+            }
+        },
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "username": "liuqian",
+                        "password": "test",
+                        "column": [
+                            "weee"
+                        ],
+                        "connection": [
+                            {
+                                "table": [
+                                    "test"
+                                ],
+                                "jdbcUrl": [
+                                    "jdbc:mysql://x.x.x.x:3306/datax_test2"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "writer": {
+                    "name": "starrockswriter",
+                    "parameter": {
+                        "username": "test",
+                        "password": "test",
+                        "database": "test",
+                        "table": "test",
+                        "column": [
+                            "weee"
+                        ],
+                        "preSql": null,
+                        "postSql": null,
+                        "jdbcUrl": "jdbc:mysql://y.y.y.y:9030/",
+                        "loadUrl": [
+                            "y.y.y.y:8030",
+                            "y.y.y.y:8030"
+                        ],
+                        "loadProps": {}
+                    }
+                }
+            }
+        ]
+    }
+}
